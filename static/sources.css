@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carme&display=swap');
+
+body {
+    margin: 0;
+    background-color: rgba(180, 238, 212, 0.637);
+    color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar {
+    width: 100%;
+    font-family: Lexend;
+    font-size: 24px;
+    background-color: #00203FFF;
+    overflow: hidden;
+    padding: 30px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #1ABC9C;
+    color: white;
+}
+
+.informational {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: center;
+}
+
+.informational p {
+    position: absolute;
+    margin-top: -20%;
+    font-size: 48px;
+    font-family: Carme;
+}
+
+.underLineBreak {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: center;
+}
+
+.underLineBreak p {
+    position: absolute;
+    margin-top: -10%;
+    font-size: 48px;
+    font-family: Carme;
+}
+
+.informationalText {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: center;
+}
+
+.informationalText p {
+    position: absolute;
+    margin-top: 5%;
+    font-size: 36px;
+    font-family: Carme;
+}

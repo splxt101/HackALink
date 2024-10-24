@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='sources.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+        <a href="/sources">Sources</a>
+    </div>
+    
+    <div class="informational">
+        <p>Outside Sources</p>
+    </div>
+
+    <div class="underLineBreak">
+        <p>----------------------------------------------------------------------</p>
+    </div>
+
+    <div class="informationalText">
+        <p>In the making of this website, I utilized two APIs. The first one is the Google Maps Geocoding API, which allowed me to convert a given city, and state into geographical coordinates, in longitude and latitude. The second one I used was the GeoDB Cities API, where I inputted longitude and latitude coordinates, and gave a radius in miles, and it returned me a list of cities in that radius. I used this list to search through created Hackathons in a file, and output any Hackathons which city was located in the X mile radius.</p>
+    </div>
+
+
+</body>
+</html>

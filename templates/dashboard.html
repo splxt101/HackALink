@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+        <a href="/sources">Sources</a>
+    </div>
+
+    <div class="pageTitle">
+        <p>Dashboard</p>
+    </div>
+
+    <div class="participantBoxes">
+
+        <div class="box" id="join">
+            <form action="/dashboard/hackathons" method="GET">
+                <p>Join a Hackathon</p>
+                <label for="city">City:</label><br>
+                <input type="text" id="city" name="city" placeholder="City"><br><br>
+                <label for="state">State:</label><br>
+                <select name="states" id= "states">
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                </select><br><br>
+                <label for="distance">Distance (miles):</label><br>
+                <input type="number" id="distance" name="distance" placeholder="Distance"><br><br>
+                <button type="submit">Search for Hackathons</button>
+            </form>
+        </div>
+
+        <div class="box" id="create">
+            <form action="/dashboard/createHackathon" method="GET">
+                <h1>Create a Hackathon</h1>
+                <h2>Want To Start Your Own Hackathon, But Don't Know How?</h2>
+                <h2>Take Our Step by Step Guide On Starting Your Own Hackathon!</h2><br>
+                <button type="submit">Create A Hackathon</button>
+            </form>
+        </div>
+
+</body>
+</html>

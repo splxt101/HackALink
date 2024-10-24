@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create A Hackathon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='createHackathon.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+        <a href="/sources">Sources</a>
+    </div>
+
+    <div class="overallGuide">
+        <h1>Create Your Hackathon</h1>
+        <form action="/submitHackathon" method="POST">
+
+            <section id="step-1">
+                <h2>Step 1: Basic Information</h2>
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="First / Last" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="example@gmail.com" required><br><br>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" placeholder="City" required><br><br>
+
+                <label for="state">State:</label>
+                <select name="state" id="state" required>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                </select><br><br>
+
+                <label for="collaboratePost">Work With Others On This Hackathon?</label><br>
+                <input type="radio" id="yes" name="collaboratePost" value="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" id="no" name="collaboratePost" value="no" checked>
+                <label for="no">No</label><br><br>
+            </section>
+
+            <section id="step-2">
+                <h2>Step 2: Communication</h2>
+                <p>A common form of communication in Hackathons are Discord servers!</p>
+                <p>You can create an account and server here : <a href = "https://www.discord.com/">Discord</a></p>
+                <label for="serverLink">Enter Server Invite Link Here (Create Invite for Infinite Usage and No Expire Date) : </label><br>
+                <input type="text" id="serverLink" name="serverLink">
+            </section>
+
+            <section id="step-3">
+                <h2>Step 3: Prizes</h2>
+                <p>A Major Part about Hackathons are what the participants are competing for!</p>
+                <p>It's important to give certificates/awards, to recognize the winning team for their hard work.</p>
+            </section>
+
+            <section id="step-4">
+                <h2>Step 4: Programming Languages/Software</h2>
+                <p>What will the hackers be coding/working with?</p>
+                <p>A few examples  of languages include Python, HTML, CSS, Java, Javascript</p>
+                <p>There's also other software to work with, such as Code.org or Scratch</p>
+                <label for="software">Languages / Software Allowed</label><br>
+                <input type="text" id="software" name="software">
+            </section>
+
+            <section id="step-5">
+                <h2>Step 5: Judging</h2>
+                <p>It's hard for one person to judge an entire competition, so it's recommended to bring a few friends to help you judge!</p>
+                <p>Hackers can give presentations and display video represenations on how their app functions, and what the purpose of it is.</p>
+                <p>It is recommended that you make a basic judging rubric, so you know what you're looking for.</p>
+            </section>
+
+            <section id="step-6">
+                <h2>Step 6: The Theme</h2>
+                <p>All Hackathons have a Theme, so the Hackers know what to code for.</p>
+                <p>Usually Themes have an impact on the community</p>
+                <p>A few examples include Education, or Health themed.</p>
+            </section>
+
+            <section id="step-7">
+                <h2>Step 7: Hosting</h2>
+                <p>Now that you have setup your own Hackathon, you need a place to host it!</p>
+                <p>Usually Hackathons can be hosted at public locations, like nearby schools, or colleges.</p>
+                <p>A few ways to get a hosting date include emailing the school adult staff, or contacting peers in your school's student body.</p>
+                <p>This step should be done a few months in advance, for a better chance to get an oppurtunity.</p>
+            </section>
+
+            <section id="step-8">
+                <h2>Step 8: Discord Server Setup</h2>
+                <p>Earlier we created a Discord server, but now it's time to set it up!</p>
+                <p>Here is a template that you can upload to your server : <a href = "https://discord.new/3q5vb5UdRRnk"> Template </a></p>
+                <p>It would be recommended that you post video tutorials on usage of programming languages, software, or github in the preparing channel.</p>
+                <p>This can ensure that the students participating in your Hackathon aren't going in with any knowledge, and have a foundation on how to make their app and submit it.</p>
+            </section>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+      <a href="/dashboard">Dashboard</a>
+      <a href="/login">Login</a>
+      <a href="/home">Home</a>
+      <a href="/logout">Logout</a>
+      <a href="/sources">Sources</a>
+  </div>
+
+    <div class="form">
+
+        <ul class="tab-group">
+          <li class="tab active"><a href="#signup">Sign Up</a></li>
+          <li class="tab"><a href="#login">Log In</a></li>
+        </ul>
+      
+        <div class="tab-content">
+          <div id="signup">
+      
+            <form action="{{ url_for('login') }}" method="post">
+              <input type="hidden" name="action_type" value="signup">
+      
+              <div class="top-row">
+                <div class="field-wrap">
+                  <label> First Name </label>
+                  <input type="text" name="first_name" required autocomplete="off" />
+                </div>
+      
+                <div class="field-wrap">
+                  <label> Last Name </label>
+                  <input type="text" name="last_name" required autocomplete="off" />
+                </div>
+              </div>
+      
+              <div class="field-wrap">
+                <label> Email Address </label>
+                <input type="email" name="email" required autocomplete="email" />
+              </div>
+      
+              <div class="field-wrap">
+                <label> Password </label>
+                <input type="password" name="password" required autocomplete="off" />
+              </div>
+      
+              <button type="submit" class="button button-block"> Create Account </button>
+      
+            </form>
+      
+          </div>
+      
+          <div id="login"> 
+            <form action="{{ url_for('login') }}" method="post">
+              <input type="hidden" name="action_type" value="login">
+      
+              <div class="field-wrap">
+                <label> Email Address </label>
+                <input type="email" name="email" required autocomplete="email" />
+              </div>
+      
+              <div class="field-wrap">
+                <label> Password </label>
+                <input type="password" name="password" required autocomplete="off" />
+              </div>
+      
+              <button class="button button-block">Log In</button>
+      
+            </form>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+      <script> /** sample login javascript attributed from https://codepen.io/ehermanson/pen/KwKWEv **/
+
+        $('.form').find('input, textarea').on('keyup blur focus', function (e) {
+        
+        var $this = $(this),
+            label = $this.prev('label');
+
+            if (e.type === 'keyup') {
+                    if ($this.val() === '') {
+                label.removeClass('active highlight');
+                } else {
+                label.addClass('active highlight');
+                }
+            } else if (e.type === 'blur') {
+                if( $this.val() === '' ) {
+                    label.removeClass('active highlight'); 
+                    } else {
+                    label.removeClass('highlight');   
+                    }   
+            } else if (e.type === 'focus') {
+            
+            if( $this.val() === '' ) {
+                    label.removeClass('highlight'); 
+                    } 
+            else if( $this.val() !== '' ) {
+                    label.addClass('highlight');
+                    }
+            }
+
+        });
+
+        $('.tab a').on('click', function (e) {
+        
+        e.preventDefault();
+        
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+        
+        target = $(this).attr('href');
+
+        $('.tab-content > div').not(target).hide();
+        
+        $(target).fadeIn(600);
+        
+        });
+
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join a Hackathon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='joinhackathon.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/login">Login</a>
+        <a href="/home">Home</a>
+        <a href="/logout">Logout</a>
+        <a href="/sources">Sources</a>
+    </div>
+
+    <div class="container">
+        <h2>Nearby Hackathons:</h2>
+
+        {% for hackathon in hackathons %}
+        <div class="hackathon-card">
+            <p>Creator: {{ hackathon.name }}</p>
+            <p>City: {{ hackathon.matchCity }}</p>
+            <p>Looking for Collaborators/Co-Creators: {{ hackathon.collaborate }}</p>
+            <p>Server Link: <a href="{{ hackathon.discordLink }}">{{ hackathon.discordLink }}</a></p>
+            <p>Software Allowed: {{ hackathon.usedSoftware }}</p>
+
+            {% if hackathon.can_delete %}
+            <form action="{{ url_for('delete_hackathon') }}" method="post">
+            <input type="hidden" name="email" value="{{ hackathon.email }}">
+            <button type="submit">Delete</button>
+            </form>
+            {% endif %}
+
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
