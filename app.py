@@ -6,7 +6,7 @@ import json
 
 app = Flask(__name__)
 
-app.secret_key = '6FD9BCTH3ONLY0N388A2C7B419A9ABB630'
+app.secret_key = 'Create your own secure key'
 
 @app.route("/")
 def landing_redirect():
@@ -107,7 +107,7 @@ def pullUrlSearch():
 
 
 def lat_and_lng(city, state):
-    api_key = 'AIzaSyA_Vg3vmRKWO_hLlkAzcKvU1lf1FMYf_k0'
+    api_key = 'Google Maps Geocoding API Key'
     webUrl = f"https://maps.googleapis.com/maps/api/geocode/json?address={city},{state}&key={api_key}"
     results = requests.get(webUrl)
     resultsData = results.json()
@@ -122,7 +122,7 @@ def get_close_cities( lat, lng, radius ):
     conn = http.client.HTTPSConnection("wft-geo-db.p.rapidapi.com")
 
     headers = {
-        'x-rapidapi-key': "87a6bd5685msh013d8e0f76623bdp141736jsnef565079f582",
+        'x-rapidapi-key': "GeoDB API Key",
         'x-rapidapi-host': "wft-geo-db.p.rapidapi.com"
     }
 
